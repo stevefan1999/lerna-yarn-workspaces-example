@@ -5,10 +5,6 @@ module.exports = wallaby => {
       'packages/**/*.+(js|jsx|ts|tsx|json)',
       '!packages/**/dist/**',
       '!packages/**/node_modules/**',
-      '!packages/**/__tests__/*.+(js|jsx|ts|tsx)'      'jest.config.js',
-      'packages/**/*.+(js|jsx|ts|tsx|json)',
-      '!packages/**/dist/**',
-      '!packages/**/node_modules/**',
       '!packages/**/__tests__/*.+(js|jsx|ts|tsx)'
     ],
     filesWithNoCoverageCalculated: [
