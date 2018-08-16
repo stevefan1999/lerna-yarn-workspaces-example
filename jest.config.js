@@ -6,6 +6,9 @@ module.exports = {
   'modulePaths': [
     '<rootDir>/packages/'
   ],
+  'moduleNameMapper': {
+    '@foo/(.*)': '<rootDir>/packages/$1/src/'
+  },
   'testRegex': '(/__tests__/.*|(\\.|/)(test|spec))\\.(t|j)sx?$',
   'moduleFileExtensions': [
     'ts',

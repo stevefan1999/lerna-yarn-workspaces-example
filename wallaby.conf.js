@@ -10,7 +10,8 @@ module.exports = wallaby => {
     filesWithNoCoverageCalculated: [
       '**/tsconfig.*',
       '**/package.json',
-      'jest.config.js'
+      '**/rollup.config.js',
+      '**/jest.config.js'
     ],
     tests: [
       'packages/**/__tests__/*.+(js|jsx|ts|tsx)',
@@ -35,9 +36,6 @@ module.exports = wallaby => {
     },
     setup (wallaby) {
       const jestConfig = require('./jest.config.js')
-      jestConfig.moduleNameMapper = {
-        '@foo/(.*)': '<rootDir>/packages/$1/src/'
-      }
       wallaby.testFramework.configure(jestConfig)
     }
   }
