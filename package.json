@@ -41,14 +41,19 @@
     "typescript": "^3.0.1"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier-eslint packages/**/*.js --write",
-      "git add"
+    "ignore": [
+      "**/dist/*.js"
     ],
-    "*.{ts,tsx}": [
-      "prettier-tslint fix packages/**/*.ts",
-      "git add"
-    ]
+    "linters": {
+      "*.{js,jsx}": [
+        "prettier-eslint packages/**/*.js --write",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "prettier-tslint fix packages/**/*.ts",
+        "git add"
+      ]
+    }
   },
   "name": "lerna-yarn-workspaces-example",
   "private": true,
@@ -57,6 +62,7 @@
     "build": "yarn clean && lerna run --parallel --stream build",
     "clean": "rimraf packages/**/dist",
     "lint": "eslint packages/**/*.js && tslint packages/**/*.ts",
+    "postcommit": "git update-index --again",
     "precommit": "lint-staged",
     "test": "jest",
     "watch": "lerna exec --parallel -- yarn watch"

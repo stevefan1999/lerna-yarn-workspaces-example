@@ -9,5 +9,6 @@
     "build": "rollup -c",
     "watch": "rollup -c -w"
   },
+  "umd": "dist/index.umd.js",
   "version": "0.0.1"
 }
