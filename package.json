@@ -16,7 +16,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.13",
     "jest": "^23.5.0",
     "lerna": "^3.0.6",
     "lint-staged": "^7.2.2",
@@ -55,6 +55,12 @@
       ]
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
+  },
   "name": "lerna-yarn-workspaces-example",
   "private": true,
   "scripts": {
@@ -62,8 +68,6 @@
     "build": "yarn clean && lerna run --parallel --stream build",
     "clean": "rimraf packages/**/dist",
     "lint": "eslint packages/**/*.js && tslint packages/**/*.ts",
-    "postcommit": "git update-index --again",
-    "precommit": "lint-staged",
     "test": "jest",
     "watch": "lerna exec --parallel -- yarn watch"
   },
