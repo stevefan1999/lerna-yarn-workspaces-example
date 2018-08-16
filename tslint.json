@@ -1,5 +1,7 @@
 {
   "extends": [
+    "tslint-eslint-rules",
+    "tslint-config-prettier",
     "tslint-config-standard"
   ],
   "rules": {

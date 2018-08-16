@@ -1,6 +1,6 @@
 module.exports = {
   "extends": [
-    "standard"
+    "prettier-standard"
   ],
   "parser": "babel-eslint",
   "plugins": [
