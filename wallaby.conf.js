@@ -34,7 +34,7 @@ module.exports = wallaby => {
         presets: ['jest']
       })
     },
-    setup(wallaby) {
+    setup (wallaby) {
       const jestConfig = require('./jest.config.js')
       wallaby.testFramework.configure(jestConfig)
     }
