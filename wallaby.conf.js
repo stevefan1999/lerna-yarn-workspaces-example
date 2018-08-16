@@ -1,12 +1,10 @@
 module.exports = wallaby => {
   return {
     files: [
-      '**/tsconfig.*',
-      '**/package.json',
       'jest.config.js',
-      'packages/**/*.+(js|jsx|ts|tsx)',
-      '!**/rollup.config.js',
+      'packages/**/*.+(js|jsx|ts|tsx|json)',
       '!packages/**/dist/**',
+      '!packages/**/node_modules/**',
       '!packages/**/__tests__/*.+(js|jsx|ts|tsx)'
     ],
     filesWithNoCoverageCalculated: [
@@ -15,7 +13,8 @@ module.exports = wallaby => {
       'jest.config.js'
     ],
     tests: [
-      'packages/**/__tests__/*.+(js|jsx|ts|tsx)'
+      'packages/**/__tests__/*.+(js|jsx|ts|tsx)',
+      '!packages/**/node_modules/**',
     ],
     env: {
       type: 'node',
@@ -37,9 +36,9 @@ module.exports = wallaby => {
     },
     setup (wallaby) {
       const jestConfig = require('./jest.config.js')
-      const rewriter = obj => obj.map(p => p.replace('<rootDir>', wallaby.projectCacheDir))
-      jestConfig.roots = rewriter(jestConfig.roots)
-      jestConfig.modulePaths = rewriter(jestConfig.modulePaths)
+      jestConfig.moduleNameMapper = {
+        "@foo/(.*)": "<rootDir>/packages/$1/src/"
+      };
       wallaby.testFramework.configure(jestConfig)
     }
   }
