@@ -2,7 +2,8 @@
   "jsxBracketSameLine": false,
   "parser": "babylon",
   "printWidth": 80,
-  "singleQuote": false,
+  "semi": false,
+  "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",
   "useTabs": false

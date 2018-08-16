@@ -2,12 +2,14 @@
   "extends": [
     "tslint-eslint-rules",
     "tslint-config-prettier",
-    "tslint-config-standard"
+    "tslint-plugin-prettier",
+    "tslint-config-standard",
   ],
   "rules": {
     "no-duplicate-imports": false,
     "no-empty": false,
     "no-floating-promises": false,
+    "prettier": true,
     "return-undefined": true,
     "typedef": [
       true,
