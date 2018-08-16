@@ -67,5 +67,6 @@ typings/
 dist/
 .cache/
 .vscode/
+.vscode/settings.json
 
 yarn-error.log
