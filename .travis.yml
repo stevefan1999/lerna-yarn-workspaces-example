@@ -1,3 +1,16 @@
 language: node_js
+cache:
+  directories:
+    - ~/.npm
 node_js:
-  - "node"
+  - "10"
+  - "8"
+  - "6"
+env:
+  global:
+    - NODE_NO_WARNINGS=1
+cache:
+  directories:
+    - $HOME/.npm
+script:
+  - yarn test
