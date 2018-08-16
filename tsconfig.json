@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@foo/*": [
-        "./*/src"
-      ]
+      "@foo/*": ["./*/src"]
     }
   },
   "extends": "./tsconfig.base.json"

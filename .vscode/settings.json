@@ -1,4 +1,5 @@
 {
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
-  "typescript.referencesCodeLens.enabled": false
+  "typescript.referencesCodeLens.enabled": false,
+  "editor.formatOnSave": true
 }
