@@ -66,3 +66,6 @@ typings/
 
 dist/
 .cache/
+.vscode/
+
+yarn-error.log
