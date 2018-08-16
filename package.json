@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.1",
     "@babel/core": "^7.0.0-rc.1",
@@ -64,9 +67,14 @@
   },
   "name": "lerna-yarn-workspaces-example",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevefan1999/lerna-yarn-workspaces-example.git"
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "yarn clean && lerna run --parallel --stream build",
+    "changelog": "lerna-changelog",
     "clean": "rimraf packages/**/dist",
     "lint": "eslint packages/**/*.js && tslint packages/**/*.ts",
     "test": "jest",

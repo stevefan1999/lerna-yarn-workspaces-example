@@ -1,4 +1,13 @@
 {
+  "changelog": {
+    "cacheDir": ".cache/changelog",
+    "labels": {
+      "bug": ":bug: Bug Fix",
+      "doc": ":book: Document",
+      "enhancement": ":rocket: Enhancement",
+      "feat": ":zap: New Feature"
+    }
+  },
   "npmClient": "yarn",
   "packages": ["packages/*"],
   "useWorkspaces": true,
