@@ -5,7 +5,7 @@ export default {
   ...base,
   input: 'src/index.ts',
   output: [
-    { file: pkg.main, format: 'cjs' },
+    { file: pkg.cjs, format: 'cjs' },
     { file: pkg.module, format: 'esm' }
   ]
 }

@@ -2,8 +2,9 @@
   "dependencies": {
     "@foo/x-core": "^0.0.1"
   },
-  "main": "dist/main.cjs.js",
-  "module": "dist/main.esm.js",
+  "main": "src/index.ts",
+  "cjs": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "name": "@foo/x-cli",
   "scripts": {
     "build": "rollup -c",

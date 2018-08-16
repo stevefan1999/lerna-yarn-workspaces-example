@@ -1,7 +1,4 @@
 module.exports = {
-  'roots': [
-    '<rootDir>/packages'
-  ],
   'transform': {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest'
