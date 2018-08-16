@@ -1,4 +1,5 @@
 module.exports = {
+  'setupTestFrameworkScriptFile': '<rootDir>/jest.setup.js',
   'transform': {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest'

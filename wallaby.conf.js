@@ -1,7 +1,7 @@
 module.exports = wallaby => {
   return {
     files: [
-      'jest.config.js',
+      'jest.*.js',
       'packages/**/*.+(js|jsx|ts|tsx|json)',
       '!packages/**/dist/**',
       '!packages/**/node_modules/**',
