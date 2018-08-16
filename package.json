@@ -40,6 +40,12 @@
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.0.1"
   },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "ignore": [
       "**/dist/*.js"
@@ -53,12 +59,6 @@
         "prettier-tslint fix packages/**/*.ts",
         "git add"
       ]
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index --again"
     }
   },
   "name": "lerna-yarn-workspaces-example",
