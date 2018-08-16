@@ -1,6 +1,5 @@
 {
-  "main": "src/index.ts",
-  "cjs": "dist/index.cjs.js",
+  "main": "src/index.cjs.js",
   "module": "dist/index.esm.js",
   "name": "@foo/x-core",
   "scripts": {

@@ -2,8 +2,7 @@
   "dependencies": {
     "@foo/x-core": "^0.0.1"
   },
-  "main": "src/index.ts",
-  "cjs": "dist/index.cjs.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "name": "@foo/x-cli",
   "scripts": {
