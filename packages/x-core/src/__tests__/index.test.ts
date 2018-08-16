@@ -1,4 +1,3 @@
-import '@wordpress/jest-console'
 import { awesomeFn } from '@foo/x-core'
 
 describe('x-core', () => {

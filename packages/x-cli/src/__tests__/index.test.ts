@@ -1,4 +1,3 @@
-import '@wordpress/jest-console'
 import { cli } from '@foo/x-cli'
 
 describe('x-cli', () => {
