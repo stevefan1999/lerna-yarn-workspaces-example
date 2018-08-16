@@ -1,19 +1,11 @@
 {
-  "name": "@quramy/x-core",
-  "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "name": "@foo/x-core",
   "scripts": {
-    "prepare": "tsc -p tsconfig.build.json"
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@types/node": "^8.0.28"
-  },
-  "devDependencies": {
-    "typescript": "^2.5.2"
-  }
+  "typings": "dist/index.d.ts",
+  "version": "0.0.1"
 }

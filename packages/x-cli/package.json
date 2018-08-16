@@ -1,27 +1,13 @@
 {
-  "name": "@quramy/x-cli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "lib/main.js",
-  "scripts": {
-    "test": "ava",
-    "prepare": "tsc -p tsconfig.build.json"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "@quramy/x-core": "^1.0.0",
-    "@types/node": "^8.0.28",
-    "minimist": "^1.2.0"
+    "@foo/x-core": "^0.0.1"
   },
-  "devDependencies": {
-    "ava": "^0.22.0",
-    "typescript": "^2.5.2"
+  "main": "dist/main.cjs.js",
+  "module": "dist/main.esm.js",
+  "name": "@foo/x-cli",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
   },
-  "ava": {
-    "files": [
-      "lib/**/*.spec.js"
-    ]
-  }
+  "version": "0.0.1"
 }
