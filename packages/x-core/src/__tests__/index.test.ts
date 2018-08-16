@@ -1,8 +1,8 @@
-import { awesomeFn } from "@foo/x-core";
+import { awesomeFn } from '@foo/x-core'
 
-describe("x-core", () => {
-  test("should log", () => {
+describe('x-core', () => {
+  test('should log', () => {
     awesomeFn();
-    (expect(console) as any).toHaveLoggedWith("Hello");
-  });
-});
+    (expect(console) as any).toHaveLoggedWith('Hello')
+  })
+})

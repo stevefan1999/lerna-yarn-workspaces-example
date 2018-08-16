@@ -1,6 +1,6 @@
-import { awesomeFn } from "@foo/x-core";
+import { awesomeFn } from '@foo/x-core'
 
-export function cli(): Promise<boolean> {
-  awesomeFn();
-  return Promise.resolve(true);
+export function cli (): Promise<boolean> {
+  awesomeFn()
+  return Promise.resolve(true)
 }
