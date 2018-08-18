@@ -5,9 +5,7 @@ import { TapBark } from 'tap-bark'
 async function main() {
   try {
     const testSet = TestSet.create()
-    testSet.addTestsFromFiles(
-      './packages/**/__tests__/*.{test,spec}.{js,jsx,ts,tsx}'
-    )
+    testSet.addTestsFromFiles('./packages/**/*.{test,spec}.{js,jsx,ts,tsx}')
 
     const testRunner = new TestRunner()
 

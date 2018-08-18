@@ -5,8 +5,8 @@ import commonjs from 'rollup-plugin-commonjs'
 import builtins from 'rollup-plugin-node-builtins'
 import globals from 'rollup-plugin-node-globals'
 import resolve from 'rollup-plugin-node-resolve'
+import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
-import { uglify } from 'rollup-plugin-uglify'
 
 const getPackageJsonPath = pkgPath => path.resolve(pkgPath, './package.json')
 
@@ -42,7 +42,7 @@ const createPlugins = pkgPath => [
     include: [path.resolve(pkgPath, './src/**.js+(|x)')],
     exclude: ['**.{test,spec}.js+(|x)']
   }),
-  process.env.NODE_ENV === 'production' && uglify()
+  process.env.NODE_ENV === 'production' && terser()
 ]
 
 const createOutputFiles = pkgPath => {
