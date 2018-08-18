@@ -1,11 +1,7 @@
 module.exports = {
-  presets: [
+  presets: [['@babel/preset-env', { modules: false }]],
+  plugins: Object.assign(
     [
-      '@babel/preset-env',
-      {
-        modules: false,
-        useBuiltIns: true
-      },
       ['@babel/plugin-proposal-decorators', { legacy: true }],
       '@babel/plugin-proposal-function-sent',
       '@babel/plugin-proposal-export-namespace-from',
@@ -15,6 +11,7 @@ module.exports = {
       '@babel/plugin-syntax-import-meta',
       ['@babel/plugin-proposal-class-properties', { loose: false }],
       '@babel/plugin-proposal-json-strings'
-    ]
-  ]
+    ],
+    process.env.NODE_ENV === 'test' ? ['istanbul'] : []
+  )
 }

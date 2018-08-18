@@ -1,0 +1,11 @@
+{
+  "include": ["packages/**/src/**/*.[jt]s?(x)"],
+  "exclude": ["**/*.{d,test,spec}.[jt]s?(x)"],
+  "reporter": ["lcov", "text-summary"],
+  "extension": [".ts", ".tsx", ".jsx"],
+  "require": ["esm", "./.register.js"],
+  "all": true,
+  "cache": true,
+  "per-file": true,
+  "check-coverage": true
+}
