@@ -5,7 +5,6 @@ cache:
 node_js:
   - "10"
   - "8"
-  - "6"
 env:
   global:
     - NODE_NO_WARNINGS=1

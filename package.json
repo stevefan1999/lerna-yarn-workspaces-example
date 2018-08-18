@@ -41,6 +41,9 @@
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^3.0.1"
   },
+  "engines": {
+    "node": ">=8.x.x"
+  },
   "husky": {
     "hooks": {
       "post-commit": "git update-index --again",
