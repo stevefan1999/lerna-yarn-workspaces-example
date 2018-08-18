@@ -3,13 +3,13 @@ module.exports = wallaby => {
     files: [
       'test.ts',
       'tsconfig.json',
-      'packages/**/*.{js,jsx,ts,tsx,json}',
+      'packages/**/*.{[jt]s?(x),json}',
       '!**/dist',
       '!packages/**/node_modules',
-      '!packages/**/*.{test,spec}.{js,jsx,ts,tsx}'
+      '!packages/**/*.{test,spec}.[jt]s?(x)'
     ],
     filesWithNoCoverageCalculated: ['**/package.json'],
-    tests: ['packages/**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    tests: ['packages/**/*.{test,spec}.[jt]s?(x)'],
     env: {
       type: 'node',
       runner: 'node',

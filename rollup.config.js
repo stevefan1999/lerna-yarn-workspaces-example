@@ -1,3 +1,4 @@
+import globby from 'globby'
 import path from 'path'
 import autoExternal from 'rollup-plugin-auto-external'
 import babel from 'rollup-plugin-babel'
@@ -9,9 +10,7 @@ import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
 
 const getPackageJsonPath = pkgPath => path.resolve(pkgPath, './package.json')
-
 const getPackageJson = pkgPath => require(getPackageJsonPath(pkgPath))
-
 const createPlugins = pkgPath => [
   globals(),
   builtins(),
@@ -27,8 +26,8 @@ const createPlugins = pkgPath => [
   typescript({
     cacheRoot: '.cache/typescript',
     check: false,
-    include: [path.resolve(pkgPath, './src/**.ts+(|x)')],
-    exclude: ['**.{d,test,spec}.ts+(|x)'],
+    include: [path.resolve(pkgPath, './src/**/*.ts?(x)')],
+    exclude: ['**/*.{d,test,spec}.ts?(x)'],
     tsconfig: './tsconfig.json',
     useTsconfigDeclarationDir: true,
     tsconfigOverride: {
@@ -39,8 +38,8 @@ const createPlugins = pkgPath => [
     }
   }),
   babel({
-    include: [path.resolve(pkgPath, './src/**.js+(|x)')],
-    exclude: ['**.{test,spec}.js+(|x)']
+    include: [path.resolve(pkgPath, './src/**/*.js?(x)')],
+    exclude: ['**/*.{test,spec}.js?(x)']
   }),
   process.env.NODE_ENV === 'production' && terser()
 ]
@@ -49,6 +48,9 @@ const createOutputFiles = pkgPath => {
   let ret = []
   const pkg = getPackageJson(pkgPath)
 
+  // for every key in mappings, if such key exist in the package manifest
+  // then the repo will be compiled with corrosonding value in the package manifest
+  // with format of value of the key in mappings
   const mappings = {
     main: 'cjs',
     module: 'esm',
@@ -74,7 +76,7 @@ const createTask = pkgPath => ({
   plugins: createPlugins(pkgPath)
 })
 
-export default [
-  createTask(path.resolve(__dirname, './packages/cli')),
-  createTask(path.resolve(__dirname, './packages/core'))
-]
+export default async () =>
+  (await globby(path.resolve(__dirname, './packages/**/package.json'))) // find all possible subrepo with package.json
+    .filter(_ => !require(_).private) // and see if it is not private
+    .map(_ => createTask(_.replace('/package.json', ''))) // then create a task for the subrepo
