@@ -1,11 +1,10 @@
 module.exports = wallaby => {
   return {
     files: [
-      'jest.*.js',
-      'packages/**/*.+(js|jsx|ts|tsx|json)',
+      'packages/**/*.+(ts|tsx|json)',
       '!packages/**/dist/**',
       '!packages/**/node_modules/**',
-      '!packages/**/__tests__/*.+(js|jsx|ts|tsx)'
+      '!packages/**/__tests__/*.+(ts|tsx)'
     ],
     filesWithNoCoverageCalculated: [
       '**/tsconfig.*',
@@ -14,20 +13,23 @@ module.exports = wallaby => {
       '**/jest.config.js'
     ],
     tests: [
-      'packages/**/__tests__/*.+(js|jsx|ts|tsx)',
+      'packages/**/__tests__/*.+(ts|tsx)',
       '!packages/**/node_modules/**'
     ],
     env: {
       type: 'node',
-      runner: 'node'
+      runner: 'node',
+      params: {
+        runner: `-r ${require.resolve('esm')}`
+      }
     },
     workers: {
       restart: true
     },
-    testFramework: 'jest',
+    // testFramework: 'jest',
     compilers: {
       '**/*.tsx?': wallaby.compilers.typeScript({
-        module: 'commonjs'
+        // module: 'commonjs'
       }),
       '**/*.jsx?': wallaby.compilers.babel({
         babelrc: true,
@@ -35,8 +37,8 @@ module.exports = wallaby => {
       })
     },
     setup (wallaby) {
-      const jestConfig = require('./jest.config.js')
-      wallaby.testFramework.configure(jestConfig)
+      // const jestConfig = require('./jest.config.js')
+      // wallaby.testFramework.configure(jestConfig)
     }
   }
 }
