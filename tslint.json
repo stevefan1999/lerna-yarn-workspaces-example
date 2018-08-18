@@ -1,16 +1,19 @@
 {
   "extends": [
     "tslint-eslint-rules",
-    "tslint-config-prettier",
-    "tslint-plugin-prettier",
     "tslint-config-standard",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
   ],
   "rules": {
+    "no-conditional-assignment": false,
     "no-duplicate-imports": false,
     "no-empty": false,
     "no-floating-promises": false,
+    "no-unused-expression": false,
     "prettier": true,
     "return-undefined": true,
+    "space-before-function-paren": [true, "never"],
     "typedef": [
       true,
       "call-signature",
