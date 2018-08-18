@@ -6,6 +6,7 @@ import typescript from 'rollup-plugin-typescript2'
 import { uglify } from 'rollup-plugin-uglify'
 
 export default {
+  input: 'src/index.ts',
   plugins: [
     autoExternal(),
     resolve({
@@ -17,12 +18,17 @@ export default {
     typescript({
       clean: true,
       useTsconfigDeclarationDir: false,
-      cacheRoot: './'
+      cacheRoot: './',
+      tsconfig: './tsconfig.json'
     }),
     babel({
       include: ['*.js+(|x)', '**/*.js+(|x)'],
       exclude: ['node_modules/**', '*.ts+(|x)', '**/*.ts+(|x)']
     }),
     process.env.NODE_ENV === 'production' && uglify()
+  ],
+  output: [
+    { file: 'dist/index.cjs.js', format: 'cjs' },
+    { file: 'dist/index.esm.js', format: 'esm' }
   ]
 }
