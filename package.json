@@ -26,9 +26,11 @@
     "prettier-eslint-cli": "^4.7.1",
     "rollup": "^0.64.1",
     "rollup-plugin-auto-external": "^2.0.0",
-    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-babel": "^4.0.0-beta.8",
     "rollup-plugin-commonjs": "^9.1.5",
     "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.2.1",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-typescript2": "^0.16.1",
     "rollup-plugin-uglify": "^4.0.0",
@@ -52,7 +54,7 @@
   },
   "lint-staged": {
     "ignore": [
-      "**/dist/*.js"
+      "**/dist/**"
     ],
     "linters": {
       "*.{js,jsx}": [
@@ -82,11 +84,9 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run --parallel --stream build",
+    "build": "rollup -c",
     "changelog": "lerna-changelog",
-    "clean": "rimraf packages/**/dist",
-    "test": "node -r esm -r ts-node/register/transpile-only -r tsconfig-paths/register ./test.ts",
-    "watch": "lerna exec --parallel -- yarn watch"
+    "test": "node -r esm -r ts-node/register/transpile-only -r tsconfig-paths/register ./alsatian.ts"
   },
   "workspaces": [
     "packages/*"
