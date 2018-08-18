@@ -1,9 +1,7 @@
 {
+  "index": "./src/index.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "name": "@foo/core",
-  "scripts": {
-    "build": "rollup -c ../../rollup.config.js",
-    "watch": "rollup -c ../../rollup.config.js -w"
-  },
-  "typings": "dist/index.d.ts",
   "version": "0.0.1"
 }
