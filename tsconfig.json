@@ -1,9 +1,36 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": true,
     "baseUrl": "./packages",
+    "declaration": true,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "declarationDir": "./",
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "inlineSourceMap": true,
+    "jsx": "preserve",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "paths": {
       "@foo/*": ["./*/src"]
-    }
+    },
+    "preserveConstEnums": true,
+    "pretty": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "esnext"
   },
-  "extends": "./tsconfig.base.json"
+  "exclude": ["node_modules"]
 }
