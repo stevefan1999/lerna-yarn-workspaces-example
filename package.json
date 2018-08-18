@@ -27,7 +27,6 @@
     "prettier": "^1.14.2",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
-    "rimraf": "^2.6.2",
     "rollup": "^0.64.1",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-babel": "^3.0.7",
@@ -83,7 +82,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn clean && lerna run --parallel --stream build",
+    "build": "lerna run --parallel --stream build",
     "changelog": "lerna-changelog",
     "clean": "rimraf packages/**/dist",
     "test": "node -r esm -r ts-node/register/transpile-only -r tsconfig-paths/register ./test.ts",
