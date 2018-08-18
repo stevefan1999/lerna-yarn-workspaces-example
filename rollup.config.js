@@ -16,8 +16,8 @@ export default {
     commonjs(),
     typescript({
       clean: true,
-      useTsconfigDeclarationDir: true,
-      cacheRoot: '.cache'
+      useTsconfigDeclarationDir: false,
+      cacheRoot: './'
     }),
     babel({
       include: ['*.js+(|x)', '**/*.js+(|x)'],

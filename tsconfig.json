@@ -7,7 +7,6 @@
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "declarationDir": "./",
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
@@ -20,6 +19,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "outDir": "lib",
     "paths": {
       "@foo/*": ["./*/src"]
     },
