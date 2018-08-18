@@ -1,0 +1,10 @@
+{
+  "ignore": ["**/dist/**/*.*"],
+  "linters": {
+    "*.{js,jsx}": ["prettier-eslint packages/**/*.js --write", "git add"],
+    "*.{ts,tsx}": [
+      "tslint --project tsconfig.json packages/**/*.ts --fix",
+      "git add"
+    ]
+  }
+}

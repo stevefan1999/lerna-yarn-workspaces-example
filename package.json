@@ -58,37 +58,7 @@
   "engines": {
     "node": ">=8.x.x"
   },
-  "husky": {
-    "hooks": {
-      "post-commit": "git update-index --again",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "ignore": [
-      "**/dist/**/*.*"
-    ],
-    "linters": {
-      "*.{js,jsx}": [
-        "prettier-eslint packages/**/*.js --write",
-        "git add"
-      ],
-      "*.{ts,tsx}": [
-        "tslint --project tsconfig.json packages/**/*.ts --fix",
-        "git add"
-      ]
-    }
-  },
   "name": "lerna-yarn-workspaces-example",
-  "prettier": {
-    "jsxBracketSameLine": false,
-    "printWidth": 80,
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "useTabs": false
-  },
   "private": true,
   "repository": {
     "type": "git",
